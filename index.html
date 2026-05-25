@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Brightlife Healthcare Inc.</title>
+
+<style>
+    :root{
+        --primary:#223B6A;
+        --secondary:#80AE4C;
+        --light:#f5f7fb;
+        --white:#ffffff;
+    }
+
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:Arial, sans-serif;
+    }
+
+    body{
+        background:var(--light);
+        color:#333;
+        overflow-x:hidden;
+    }
+
+    header{
+        background:linear-gradient(135deg,var(--primary),#1b2f52);
+        color:white;
+        padding:20px;
+        text-align:center;
+        animation:fadeDown 1s ease;
+    }
+
+    header h1 span{
+        color:var(--secondary);
+    }
+
+    .hero{
+        padding:60px 20px;
+        text-align:center;
+        background:url('https://images.unsplash.com/photo-1584515933487-779824d29309') center/cover;
+        color:white;
+        position:relative;
+    }
+
+    .hero::after{
+        content:"";
+        position:absolute;
+        top:0;left:0;
+        width:100%;height:100%;
+        background:rgba(34,59,106,0.75);
+    }
+
+    .hero-content{
+        position:relative;
+        z-index:2;
+        animation:fadeUp 1.2s ease;
+    }
+
+    .btn{
+        display:inline-block;
+        padding:12px 20px;
+        margin:10px;
+        border-radius:25px;
+        text-decoration:none;
+        font-weight:bold;
+        transition:0.3s;
+    }
+
+    .btn-primary{
+        background:var(--secondary);
+        color:white;
+    }
+
+    .btn-primary:hover{
+        background:#6f9a3f;
+        transform:scale(1.05);
+    }
+
+    .btn-outline{
+        border:2px solid white;
+        color:white;
+    }
+
+    /* SERVICES SLIDER */
+    .services{
+        padding:60px 20px;
+        text-align:center;
+    }
+
+    .service-container{
+        max-width:800px;
+        margin:auto;
+        position:relative;
+        overflow:hidden;
+        background:white;
+        border-radius:15px;
+        box-shadow:0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .service-slide{
+        display:none;
+        padding:30px;
+        animation:fade 0.6s ease;
+    }
+
+    .service-slide img{
+        width:100%;
+        height:250px;
+        object-fit:cover;
+        border-radius:10px;
+    }
+
+    .arrow{
+        position:absolute;
+        top:50%;
+        transform:translateY(-50%);
+        background:var(--primary);
+        color:white;
+        border:none;
+        padding:10px 15px;
+        cursor:pointer;
+        border-radius:50%;
+    }
+
+    .left{left:10px;}
+    .right{right:10px;}
+
+    /* MAP */
+    .map{
+        padding:40px 20px;
+        text-align:center;
+    }
+
+    iframe{
+        width:90%;
+        max-width:900px;
+        border-radius:15px;
+    }
+
+    /* FOOTER */
+    footer{
+        background:var(--primary);
+        color:white;
+        padding:40px 20px;
+        text-align:center;
+    }
+
+    .logos img{
+        height:70px;
+        margin:10px;
+        background:white;
+        padding:5px;
+        border-radius:10px;
+    }
+
+    @keyframes fadeUp{
+        from{opacity:0; transform:translateY(40px);}
+        to{opacity:1; transform:translateY(0);}
+    }
+
+    @keyframes fadeDown{
+        from{opacity:0; transform:translateY(-40px);}
+        to{opacity:1; transform:translateY(0);}
+    }
+
+    @keyframes fade{
+        from{opacity:0;}
+        to{opacity:1;}
+    }
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Brightlife <span>Healthcare Inc.</span></h1>
+    <p>Compassionate Care. Modern Healthcare. 24/7 Service.</p>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h2>Quality Healthcare You Can Trust</h2>
+        <p>Hemodialysis • Emergency Care • Laboratory • X-Ray • Pharmacy</p>
+
+        <a class="btn btn-primary" href="https://www.facebook.com/BrightlifeHealthCareInc/" target="_blank">
+            Message Us on Facebook
+        </a>
+
+        <a class="btn btn-outline" href="#services">Explore Services</a>
+    </div>
+</section>
+
+<section class="services" id="services">
+    <h2>Our Medical Services</h2>
+    <br>
+
+    <div class="service-container">
+
+        <button class="arrow left" onclick="prevSlide()">&#10094;</button>
+        <button class="arrow right" onclick="nextSlide()">&#10095;</button>
+
+        <div class="service-slide">
+            <h3>Hemodialysis Center</h3>
+            <img src="https://images.unsplash.com/photo-1580281657521-1c3e1b4c3c88" />
+            <p>Advanced kidney care with modern dialysis machines.</p>
+        </div>
+
+        <div class="service-slide">
+            <h3>Emergency Care Facility</h3>
+            <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5" />
+            <p>24/7 emergency response and critical care support.</p>
+        </div>
+
+        <div class="service-slide">
+            <h3>Laboratory Department</h3>
+            <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67" />
+            <p>Accurate diagnostics and fast laboratory results.</p>
+        </div>
+
+        <div class="service-slide">
+            <h3>X-Ray Services</h3>
+            <img src="https://images.unsplash.com/photo-1581595219315-a187dd40c322" />
+            <p>High-quality imaging for precise diagnosis.</p>
+        </div>
+
+        <div class="service-slide">
+            <h3>24/7 Pharmacy</h3>
+            <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88" />
+            <p>Available medicines anytime you need them.</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="map">
+    <h2>Our Location</h2>
+    <p>Blk 113 Lot 7,8,10 & 11 Zone 7 AFP Housing, Bulihan, Silang, Cavite</p>
+
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1473.812427430113!2d120.99684208387235!3d14.282302968867228!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397d60286ec56c5%3A0x76955a4ab8a401a9!2sSt.%20Mazenod%20Hospital%2C%20Inc.!5e1!3m2!1sen!2sph!4v1779723513025!5m2!1sen!2sph"
+        height="450"
+        style="border:0;"
+        loading="lazy">
+    </iframe>
+</section>
+
+<footer>
+    <h3>Brightlife Healthcare Inc.</h3>
+    <p>Contact: 09XX-XXX-XXXX |
+
+    <div class="logos">
+        <img src="https://images.unsplash.com/vector-1779718090608-15a78acf0ec9?" alt="DOH Accredited">
+        <img src="https://images.unsplash.com/vector-1779718158515-83ad99a59f3f?" alt="PhilHealth Accredited">
+    </div>
+
+    <p>© 2026 Brightlife Healthcare Inc. All Rights Reserved</p>
+</footer>
+
+<script>
+let index = 0;
+const slides = document.getElementsByClassName("service-slide");
+
+function showSlide(i){
+    for(let s of slides){ s.style.display="none"; }
+    slides[i].style.display="block";
+}
+
+function nextSlide(){
+    index = (index + 1) % slides.length;
+    showSlide(index);
+}
+
+function prevSlide(){
+    index = (index - 1 + slides.length) % slides.length;
+    showSlide(index);
+}
+
+window.onload = () => showSlide(index);
+</script>
+
+</body>
+</html>
